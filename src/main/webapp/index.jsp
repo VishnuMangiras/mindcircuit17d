@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- IMPORTANT FIX -->
+    <meta charset="UTF-8">
+
     <title>Operation Sindoor</title>
+
     <style>
         body {
             margin: 0;
@@ -59,4 +63,3 @@
 
 </body>
 </html>
-
