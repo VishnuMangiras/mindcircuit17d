@@ -2,28 +2,23 @@ pipeline {
     agent any
 
     stages {
-	
-        stage('checkout') {
+        stage('Git checkout') {
             steps {
-                echo 'git checkout stage'
-				git branch: 'main', url: 'https://github.com/devopstraininghub/mindcircuit17d.git'
+                echo 'clode the code from git'
+				git branch: 'main', url: 'https://github.com/TejasMangira/mindcircuit17d.git'
             }
         }
-
-        stage('build') {
+		   stage('build') {
             steps {
-                echo 'Building with maven '
-				sh 'mvn clean install '
+                echo 'Build the code with maven'
+				sh 'mvn clean install'
             }
         }
-
-        stage('Deploy') {
+		   stage('deploy') {
             steps {
-                echo 'Deploying to tomcat'
-				deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://54.160.144.88:8081/')], contextPath: 'insta', war: '**/*.war'
-				
+                echo 'Deploy into tomcat'
+				deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://98.93.33.99:8080/')], contextPath: 'Sindoor', war: '**/*.war'
             }
-        }		
-		
+        }
     }
 }
