@@ -24,6 +24,6 @@ spec:
     spec:
       containers: 
       - name: facebook-container
-        image: tejasdocker571/tejas_repo:19
+        image: tejasdocker571/tejas_repo:20
         ports:
         - containerPort: 8080
